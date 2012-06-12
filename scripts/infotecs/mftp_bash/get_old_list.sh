@@ -14,8 +14,8 @@ echo "Starting. Copying files that are older than ${num_days} days to TMP direct
 # Copy files to TMP preserving their date and time!
 #
 # CHANGE cp to mv to DELETE files from source directory!
-find ${vipnet_dir}/* -type f -mtime +${num_days} -exec cp -p {} ${OUTPUT_DIR} \;
-ls -al ${OUTPUT_DIR}/* > old_files.txt
+find ${vipnet_dir}/* -type f -mtime +${num_days} -exec mv {} ${OUTPUT_DIR} \;
+ls -al ${OUTPUT_DIR}/* > old_envelopes.txt
 
 found_files=`ls -al ${OUTPUT_DIR}/* | wc -l`
 echo "Done. Result: ${found_files} files"
