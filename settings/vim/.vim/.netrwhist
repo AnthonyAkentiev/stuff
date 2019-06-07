@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/tonykent/mftp2/main/mftp2/bin/mac/debug/tony_dst_server/in'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/tonykent/cryptotickets/blockchain/test/server'
+let g:netrw_dirhist_2='/Users/tonykent/cryptotickets/blockchain/contracts/events'
+let g:netrw_dirhist_3='/Users/tonykent/cryptotickets/blockchain/test/contracts'
+let g:netrw_dirhist_4='/Users/tonykent/cryptotickets/blockchain/scripts/redis'
+let g:netrw_dirhist_5='/Users/tonykent/cryptotickets/tickets-wallet/ios/Pods/Pods.xcodeproj'
