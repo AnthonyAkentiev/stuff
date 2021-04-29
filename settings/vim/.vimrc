@@ -10,6 +10,22 @@ function! StatusLine(current, width)
         \ . (a:width > 80 ? ' %{&ft}[%{&enc}][%{&ffs}] %l/%L %c%V %P ' : ' ')
 endfunction
 
+function! UseTabs()
+  set tabstop=4     " Size of a hard tabstop (ts).
+  set shiftwidth=4  " Size of an indentation (sw).
+  set noexpandtab   " Always uses tabs instead of space characters (noet).
+  set autoindent    " Copy indent from current line when starting a new line (ai).
+endfunction
+
+function! UseSpaces()
+  set tabstop=4     " Size of a hard tabstop (ts).
+  set shiftwidth=4  " Size of an indentation (sw).
+  set expandtab     " Always uses spaces instead of tab characters (et).
+  set softtabstop=0 " Number of spaces a <Tab> counts for. When 0, featuer is off (sts).
+  set autoindent    " Copy indent from current line when starting a new line.
+  set smarttab      " Inserts blanks on a <Tab> key (as per sw, ts and sts).
+endfunction
+
 let g:crystalline_statusline_fn = 'StatusLine'
 let g:crystalline_theme = 'default'
 
@@ -22,8 +38,10 @@ call plug#end()
 syntax on
 filetype on
 
-"set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+au! FileType * call UseSpaces()
+
+" Set filetype for Solidity
+au BufNewFile,BufRead *.sol setfiletype solidity
+au! FileType solidity call UseTabs()
+
 set number
