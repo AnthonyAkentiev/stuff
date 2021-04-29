@@ -33,6 +33,7 @@ set laststatus=2
 
 call plug#begin()
 Plug('rbong/vim-crystalline')
+Plug('tomlion/vim-solidity')    " See https://github.com/tomlion/vim-solidity
 call plug#end()
 
 syntax on
